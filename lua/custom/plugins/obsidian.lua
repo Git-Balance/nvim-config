@@ -25,7 +25,7 @@ return {
                 path = '~/vaults/personal',
             },
             {
-                name = 'School 11 Vault',
+                name = 'School 10 Vault',
                 path = '~/Documents/School 10 Vault/',
             },
         },
