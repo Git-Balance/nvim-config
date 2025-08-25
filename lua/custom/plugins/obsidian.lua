@@ -21,12 +21,12 @@ return {
     opts = {
         workspaces = {
             {
-                name = 'personal',
-                path = '~/vaults/personal',
+                name = 'School 10 Vault',
+                path = '~/Documents/School 10 Vault/',
             },
             {
-                name = 'School 11 Vault',
-                path = '~/Documents/School 10 Vault/',
+                name = 'personal',
+                path = '~/vaults/personal',
             },
         },
 
