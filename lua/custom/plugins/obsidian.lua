@@ -1,6 +1,6 @@
 --vim.keymap.set('n', '<leader>on', obsidian.Client.create_note(), { desc = '[S]earch [H]elp' })
 return {
-    'epwalsh/obsidian.nvim',
+    'obsidian-nvim/obsidian.nvim',
     version = '*', -- recommended, use latest release instead of latest commit
     lazy = false,
     ft = 'markdown',
@@ -37,11 +37,11 @@ return {
         ---@return table
         note_frontmatter_func = function(note)
             -- Add the title of the note as an alias.
-            --if note.title then
-            --  note:add_alias(note.title)
-            --end
+            if note.title then
+                note:add_alias(note.title)
+            end
 
-            local out = { tags = note.tags }
+            local out = { tags = note.tags, aliases = note.aliases }
 
             -- `note.metadata` contains any manually added fields in the frontmatter.
             -- So here we just make sure those fields are kept in the frontmatter.
@@ -65,10 +65,17 @@ return {
             -- Optional, if you want to automatically insert a template from your template directory like 'daily.md'
             --template = nil
         },
+
         new_notes_location = 'current_dir',
+
+        -- WARNING: Commands like ":ObsidianNew" won't be supported in the future
+        -- For some reason, you are getting a warning despite fixing it...
+        -- Oh no
+        legacy_commands = false,
     },
     keys = {
-        { '<leader>on', ':ObsidianNew<CR>', desc = 'New', silent = true },
-        { '<leader>oq', ':ObsidianQuickSwitch<CR>', desc = 'Quick switch', silent = true },
+        { '<leader>on', ':Obsidian new<CR>', desc = 'New', silent = true },
+        { '<leader>oq', ':Obsidian quick_switch<CR>', desc = 'Quick switch', silent = true },
+        { '<leader>ot', ':Obsidian tags<CR>', desc = 'Tags', silent = true },
     },
 }

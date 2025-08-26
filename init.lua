@@ -1025,3 +1025,5 @@ vim.o.softtabstop = 4 -- Number of spaces inserted instead of a TAB character
 vim.o.shiftwidth = 4 -- Number of spaces inserted when indenting
 
 vim.o.relativenumber = true
+
+vim.o.conceallevel = 1
