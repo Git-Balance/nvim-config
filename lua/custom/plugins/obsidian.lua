@@ -1,4 +1,14 @@
 --vim.keymap.set('n', '<leader>on', obsidian.Client.create_note(), { desc = '[S]earch [H]elp' })
+
+-- Automatically pick the first directory that exists
+function SelectWorkspace(directoriesToCheck)
+    for _, value in pairs(directoriesToCheck) do
+        if vim.fn.isdirectory(value) ~= 0 then
+            return value
+        end
+    end
+end
+
 return {
     'obsidian-nvim/obsidian.nvim',
     version = '*', -- recommended, use latest release instead of latest commit
@@ -22,7 +32,10 @@ return {
         workspaces = {
             {
                 name = 'School 10 Vault',
-                path = '~/Documents/School 10 Vault/',
+                path = SelectWorkspace {
+                    '~/Documents/Scripts/',
+                    'C:/Users/csbon/OneDrive/Documents/School 10 Vault/',
+                },
             },
             {
                 name = 'personal',
