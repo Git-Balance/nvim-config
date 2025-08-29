@@ -33,7 +33,7 @@ return {
             {
                 name = 'School 10 Vault',
                 path = SelectWorkspace {
-                    '~/Documents/Scripts/',
+                    os.getenv 'HOME' .. '/Documents/School 10 Vault/',
                     'C:/Users/csbon/OneDrive/Documents/School 10 Vault/',
                 },
             },
