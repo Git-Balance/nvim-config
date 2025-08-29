@@ -77,5 +77,6 @@ return {
         { '<leader>on', ':Obsidian new<CR>', desc = 'New', silent = true },
         { '<leader>oq', ':Obsidian quick_switch<CR>', desc = 'Quick switch', silent = true },
         { '<leader>ot', ':Obsidian tags<CR>', desc = 'Tags', silent = true },
+        { '<leader>od', ':Obsidian dailies<CR>', desc = 'Dailies', silent = true },
     },
 }
