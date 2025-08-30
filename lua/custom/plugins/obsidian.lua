@@ -9,6 +9,14 @@ function SelectWorkspace(directoriesToCheck)
     end
 end
 
+function GetHome()
+    if package.config:sub(1, 1) == '\\' then -- Windows uses \ for files paths, Linux does not (uses /)
+        return os.getenv 'HOMEPATH'
+    else
+        return os.getenv 'HOME'
+    end
+end
+
 return {
     'obsidian-nvim/obsidian.nvim',
     version = '*', -- recommended, use latest release instead of latest commit
@@ -33,7 +41,7 @@ return {
             {
                 name = 'School 10 Vault',
                 path = SelectWorkspace {
-                    os.getenv 'HOME' .. '/Documents/School 10 Vault/',
+                    GetHome() .. '/Documents/School 10 Vault/',
                     'C:/Users/csbon/OneDrive/Documents/School 10 Vault/',
                 },
             },
