@@ -1026,4 +1026,6 @@ vim.o.shiftwidth = 4 -- Number of spaces inserted when indenting
 
 vim.o.relativenumber = true
 
-vim.o.conceallevel = 1
+vim.o.conceallevel = 2
+
+vim.o.linebreak = true
