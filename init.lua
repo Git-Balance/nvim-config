@@ -91,7 +91,13 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 -- Set to true if you have a Nerd Font installed and selected in the terminal
-vim.g.have_nerd_font = true
+-- Since this config will be used on systems without a Nerd Font, the config will need to switch the have_nerd_font variable on and off
+-- Right now, it simply checks if the user is in the list of people who do not have a Nerd Font currently installed
+if os.getenv 'USER' == 'user' then
+    vim.g.have_nerd_font = false
+else
+    vim.g.have_nerd_font = true
+end
 
 -- [[ Setting options ]]
 -- See `:help vim.o`
