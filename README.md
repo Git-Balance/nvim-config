@@ -1,5 +1,9 @@
 # kickstart.nvim
 
+A fork of [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim). The main changes are adding new plugins in `./lua/custom/plugins/`
+
+![example](./display/example.png)
+
 ## Introduction
 
 A starting point for Neovim that is:
