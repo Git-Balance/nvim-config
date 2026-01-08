@@ -59,11 +59,6 @@ return {
         frontmatter = {
             enabled = true,
             func = function(note)
-                -- Add the title of the note as an alias.
-                if note.title then
-                    note:add_alias(note.title)
-                end
-
                 local out = { tags = note.tags, aliases = note.aliases }
 
                 -- `note.metadata` contains any manually added fields in the frontmatter.
@@ -96,6 +91,8 @@ return {
         -- For some reason, you are getting a warning despite fixing it...
         -- Oh no
         legacy_commands = false,
+
+        statusline = { enabled = false },
     },
     keys = {
         { '<leader>on', ':Obsidian new<CR>', desc = 'New', silent = true },

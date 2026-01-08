@@ -944,6 +944,14 @@ require('lazy').setup({
 
             -- ... and there is more!
             --  Check out: https://github.com/echasnovski/mini.nvim
+
+            -- Custom
+
+            -- Diff plugin
+            -- You are using this to see changes in an unsaved file
+            require('mini.diff').setup {
+                source = { require('mini.diff').gen_source.save() },
+            }
         end,
     },
     { -- Highlight, edit, and navigate code
