@@ -706,6 +706,16 @@ require('lazy').setup({
                         },
                     },
                 },
+
+                -- ols = {
+                --     mason = false,
+                --     cmd = { 'ols' },
+                --     settings = {
+                --         Odin = {
+                --             format = { enable = false },
+                --         },
+                --     },
+                -- },
             }
 
             -- Ensure the servers and tools above are installed

@@ -195,5 +195,20 @@ return {
                 cwd = '${workspaceFolder}',
             },
         }
+        dap.configurations.odin = {
+            {
+                -- type = 'lldb',
+                type = 'gdb',
+                request = 'launch',
+                name = 'Odin Debug',
+                program = vim.fn.getcwd() .. '/app',
+                cwd = '${workspaceFolder}',
+                args = {},
+                stopOnEntry = false,
+                preRunCommands = {
+                    'command script import ' .. vim.fn.getcwd() .. '/dev-util/odin_lldb.py',
+                },
+            },
+        }
     end,
 }

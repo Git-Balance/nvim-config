@@ -45,10 +45,10 @@ return {
                     'C:/Users/csbon/OneDrive/Documents/School 10 Vault/',
                 },
             },
-            {
-                name = 'personal',
-                path = '~/vaults/personal',
-            },
+            -- {
+            --     name = 'personal',
+            --     path = '~/vaults/personal',
+            -- },
         },
 
         -- see below for full list of options 👇
